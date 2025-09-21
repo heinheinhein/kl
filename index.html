@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kroket Lego</title>
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+      video {
+        height: 100dvh;
+        width: 100dvw;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <video id="video" muted autoplay loop></video>
+    <script>
+      if (Hls.isSupported()) {
+        var video = document.getElementById("video");
+        var hls = new Hls();
+        hls.loadSource("/video.m3u8");
+        hls.attachMedia(video);
+      }
+    </script>
+  </body>
+</html>

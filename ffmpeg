@@ -1,0 +1,1 @@
+ffmpeg -i ./LS_BG_Ambient_3_Teams_v009__KL.mp4 -vcodec libx265 -crf 23 -hls_time 5 -hls_list_size 0 -tag:v hvc1 -f hls video.m3u8
